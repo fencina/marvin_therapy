@@ -68,7 +68,7 @@ defmodule MarvinTherapy.Marvin do
       # REMEMBER: prepending an element to a list is always faster (constant time)
       # than appending it (linear time). See https://hexdocs.pm/elixir/List.html
       available_characters = [character | available_characters]
-      {:reply, "Electrocutado #{character}", {players, available_characters}}
+      {:reply, "Player #{character} was shocked\r\n", {players, available_characters}}
     else
       {:reply, "#{character} is not playing or character does not exists\r\n", {players, available_characters}}
     end
