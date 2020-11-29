@@ -47,7 +47,7 @@ defmodule MarvinTherapy.TcpServer do
   defp execute(client, command) do
     if MarvinTherapy.Marvin.is_playing?(client) do
       #TODO execute command sent by player
-      MarvinTherapy.Marvin.electrocute(command)
+      MarvinTherapy.Marvin.shock(command)
     else
       "You are a spectator\r\n"
     end

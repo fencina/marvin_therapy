@@ -18,8 +18,8 @@ defmodule MarvinTherapy.Marvin do
     GenServer.call(__MODULE__, {:add, player})
   end
 
-  def electrocute(character) do
-    GenServer.call(__MODULE__, {:electrocute, character})
+  def shock(character) do
+    GenServer.call(__MODULE__, {:shock, character})
   end
 
   def are_available_characters? do
@@ -56,7 +56,7 @@ defmodule MarvinTherapy.Marvin do
   end
 
   @impl true
-  def handle_call({:electrocute, character}, _from, {players, available_characters}) do
+  def handle_call({:shock, character}, _from, {players, available_characters}) do
     # TODO sent notification to all players connected
     character = character |> String.trim |> String.upcase
 
